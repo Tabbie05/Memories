@@ -5,6 +5,8 @@ import Posts from './Components/Posts'
 import memories from './assets/images.jpeg'
 
 const App = () => {
+  const postList = [1, 2, 3, 4]; // Or however many posts you want
+
   return (
     <Container>
       <Paper elevation={4} className="h-15 flex justify-center items-center text-center bg-cover bg-center mt-4" >
@@ -16,15 +18,19 @@ const App = () => {
         </div>
       </Paper>
 
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Posts />
-        </Grid>
-        <Grid item xs={12}>
-          <Form />
-        </Grid>
+      <Grid container spacing={2} mt={2}>
+        {postList.map((_, index) => (
+          <Grid item xs={12} sm={6} key={index}>
+            <Posts />
+          </Grid>
+        ))}
+
+
+      <Grid item xs={12}>
+        <Form />
       </Grid>
-    </Container>
+    </Grid>
+    </Container >
   );
 };
 
