@@ -3,15 +3,10 @@ import { Container, Paper, Typography, Grid } from "@mui/material";
 import Form from "./Components/Form";
 import Posts from './Components/Posts'
 import memories from './assets/images.jpeg'
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 import { getPosts } from "../../backend/controller/postsController";
 const App = () => {
-  const postList = [1, 2, 3, 4]; // Or however many posts you want
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getPosts)
-  },[dispatch])
+
   return (
     <Container>
       <Paper elevation={4} className="h-15 flex justify-center items-center text-center bg-cover bg-center mt-4" >
